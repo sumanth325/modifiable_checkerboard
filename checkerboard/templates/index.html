@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang ="eng">
+<head>
+    <meta charseet - "UTF-8">
+    <meta name = "viewport" content = "with=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content ="ie=edge">
+    <title>Checkerboard</title>
+            <style>
+            .col1 {
+              background:{{col1}};
+              width: 80px;
+              height: 80px;
+              border: 5px solid black;
+            }
+            .col2 {
+                background:{{col2}};
+              width: 80px;
+              height: 80px;
+              border: 5px solid black;
+            } 
+            .box{
+                width:80px;
+                height:80px;
+                display: inline-block;
+                background: white;
+                border: 1px solid black;
+            }
+            </style>
+</head>
+<body>
+    <table>
+        {% for c in range(rows) %}
+        <tr>
+            
+            {% for d in range(columns) %} 
+            {% if (c+d)%2==0 %}<th class="col1"></th>
+            {% else%}<th class="col2"></th>
+            {%endif%} 
+            {% endfor %}
+
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+
+</html>
